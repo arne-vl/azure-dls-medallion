@@ -1,15 +1,17 @@
 resource "azurerm_storage_account" "dls" {
-  name                     = var.storage_account_name
-  resource_group_name      = var.resource_group_name
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  account_kind             = "StorageV2"
-  access_tier              = "Hot"
-  is_hns_enabled           = true
+  name                            = var.storage_account_name
+  resource_group_name             = var.resource_group_name
+  location                        = var.location
+  account_tier                    = "Standard"
+  account_replication_type        = "LRS"
+  account_kind                    = "StorageV2"
+  access_tier                     = "Hot"
+  is_hns_enabled                  = true
+  allow_nested_items_to_be_public = false
+  shared_access_key_enabled       = false
 
   identity {
-    type         = "SystemAssigned"
+    type = "SystemAssigned"
   }
 
   tags = var.tags
