@@ -1,11 +1,19 @@
 output "name" {
-  value = azurerm_storage_account.dls.name
+  description = "The name of the created storage account."
+  value       = azurerm_storage_account.dls.name
 }
 
 output "id" {
-  value = azurerm_storage_account.dls.id
+  description = "The id of the created storage account."
+  value       = azurerm_storage_account.dls.id
 }
 
 output "identity" {
-  value = azurerm_storage_account.dls.identity[0]
+  description = "The managed identity of the storage account."
+  value       = azurerm_storage_account.dls.identity[0]
+}
+
+output "container_names" {
+  description = "List of the names of containers that are created."
+  value       = var.containers
 }
