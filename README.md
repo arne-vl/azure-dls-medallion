@@ -5,7 +5,7 @@ This Terraform module creates a storage account in Azure with 3 containers in it
 ```
 module "dls" {
   source  = "arne-vl/dls/azurerm"
-  version = "1.1.0"
+  version = "1.1.1"
   # insert the 3 required variables here
 }
 ```
